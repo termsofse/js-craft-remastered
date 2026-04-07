@@ -18,7 +18,7 @@ function animate() {
     cubeMesh.rotation.x += 0.01;
     cubeMesh.rotation.y += 0.01;
     cubeMesh.rotation.z += 0.01;
-    renderer.render(scene, camera);
+    renderer.render(scene, playerCamera);
 }
 
 animate();
