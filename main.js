@@ -15,7 +15,7 @@ const mat = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
 const mesh = new THREE.Mesh(boxGeo, mat);
 scene.add(mesh);
 
-const outline = new THREE.MeshBasicMaterial().wireframe(true);
+const outline = new THREE.MeshBasicMaterial({ color: 0x000000}).wireframe(true);
 const outlineMesh = new THREE.Mesh(boxGeo, outline);
 scene.add(outlineMesh);
 
