@@ -1,7 +1,7 @@
 // #region Three.js Setup
 import * as THREE from 'three';
 const scene = new THREE.Scene();
-const playerCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const playerCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 128);
 playerCamera.position.z = 5;
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -10,8 +10,7 @@ document.body.appendChild(renderer.domElement);
 
 const sunlight = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( sunlight );
-
 const boxGeo = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
-const cubeMesh = new THREE.Mesh(boxGeo, material);
-scene.add(cubeMesh);
+const mat = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+const mesh = new THREE.Mesh(boxGeo, mat);
+scene.add(mesh);
