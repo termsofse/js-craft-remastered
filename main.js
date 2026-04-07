@@ -8,6 +8,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 // #endregion
 
+const sunlight = new THREE.AmbientLight( 0x404040 ); // soft white light
+scene.add( sunlight );
+
 const boxGeo = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
 const cubeMesh = new THREE.Mesh(boxGeo, material);
