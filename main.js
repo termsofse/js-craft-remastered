@@ -15,20 +15,18 @@ const mat = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
 const mesh = new THREE.Mesh(boxGeo, mat);
 scene.add(mesh);
 
-const outline = new THREE.MeshBasicMaterial({ 
-    color: 0x00ff00, 
-    wireframe: true 
-});
-const outlineMesh = new THREE.Mesh(boxGeo, outline);
-scene.add(outlineMesh);
+const edges = new THREE.EdgesGeometry(boxGeo);
+const lineMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00 });
+const outline = new THREE.LineSegments(edges, lineMaterial);
+scene.add(outline);
 
 function animate() {
     requestAnimationFrame(animate);
 
     mesh.rotation.x += 0.01;
-    outlineMesh.rotation.x += 0.01;
+    outline.rotation.x += 0.01;
     mesh.rotation.y += 0.01;
-    outlineMesh.rotation.y += 0.01;
+    outline.rotation.y += 0.01;
 
     renderer.render(scene, camera, sunlight);
 }
