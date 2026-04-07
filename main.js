@@ -12,7 +12,6 @@ const sunlight = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( sunlight );
 
 const boxGeo = new THREE.BoxGeometry(1, 1, 1);
-const basicMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const basicMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
 const basicMesh = new THREE.Mesh(boxGeo, basicMaterial);
-basicMesh.position.x = 6;
 scene.add(basicMesh);
