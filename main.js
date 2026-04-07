@@ -15,15 +15,16 @@ const mat = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
 const mesh = new THREE.Mesh(boxGeo, mat);
 scene.add(mesh);
 
-const outlineBoxGeo = new THREE.BoxGeometry(1, 1, 1);
-const outline = new THREE.MeshBasicMaterial({ color: 0x000000}).wireframe(true);
-const outlineMesh = new THREE.Mesh(outlineBoxGeo, outline);
+const outline = new THREE.MeshBasicMaterial({ 
+    color: 0x00ff00, 
+    wireframe: true 
+});
+const outlineMesh = new THREE.Mesh(boxGeo, outline);
 scene.add(outlineMesh);
 
 function animate() {
     requestAnimationFrame(animate);
 
-    // Rotate the cube for some life
     mesh.rotation.x += 0.01;
     outlineMesh.rotation.x += 0.01;
     mesh.rotation.y += 0.01;
