@@ -16,33 +16,3 @@ const basicMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 const basicMesh = new THREE.Mesh(boxGeo, basicMaterial);
 basicMesh.position.x = 6;
 scene.add(basicMesh);
-
-const lambertMaterial = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
-const lambertMesh = new THREE.Mesh(boxGeo, lambertMaterial);
-lambertMesh.position.x = 5;
-scene.add(lambertMesh);
-
-const matcapMaterial = new THREE.MeshMatcapMaterial({ color: 0x00ff00 });
-const matcapMesh = new THREE.Mesh(boxGeo, matcapMaterial);
-matcapMesh.position.x = 4;
-scene.add(matcapMesh);
-
-const phongMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
-const phongMesh = new THREE.Mesh(boxGeo, phongMaterial);
-phongMesh.position.x = 3;
-scene.add(phongMesh);
-
-const physicalMaterial = new THREE.MeshPhysicalMaterial({ color: 0x00ff00 });
-const physicalMesh = new THREE.Mesh(boxGeo, physicalMaterial);
-physicalMesh.position.x = 2;
-scene.add(physicalMesh);
-
-const standardMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-const standardMesh = new THREE.Mesh(boxGeo, standardMaterial);
-standardMesh.position.x = 1;
-scene.add(standardMesh);
-
-const toonMaterial = new THREE.MeshToonMaterial({ color: 0x00ff00 });
-const toonMesh = new THREE.Mesh(boxGeo, toonMaterial);
-toonMesh.position.x = 0;
-scene.add(toonMesh);
