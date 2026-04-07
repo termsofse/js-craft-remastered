@@ -9,7 +9,7 @@ document.body.appendChild(renderer.domElement);
 // #endregion
 
 const boxGeo = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+const material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
 const cubeMesh = new THREE.Mesh(boxGeo, material);
 scene.add(cubeMesh);
 
