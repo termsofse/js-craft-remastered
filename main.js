@@ -15,6 +15,13 @@ const mat = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
 const mesh = new THREE.Mesh(boxGeo, mat);
 scene.add(mesh);
 
+const outline = new THREE.WireframeGeometry(boxGeo);
+const line = new THREE.LineSegments(outline);
+line.material.depthWrite = false;
+line.material.opacity = 0.25;
+line.material.transparent = true;
+scene.add(line);
+
 function animate() {
     requestAnimationFrame(animate);
 
