@@ -15,19 +15,18 @@ const mat = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
 const mesh = new THREE.Mesh(boxGeo, mat);
 scene.add(mesh);
 
-const outline = new THREE.WireframeGeometry(boxGeo);
-const line = new THREE.LineSegments(outline);
-line.material.depthWrite = false;
-line.material.opacity = 0.25;
-line.material.transparent = true;
-scene.add(line);
+const outline = new THREE.MeshBasicMaterial().wireframe(true);
+const outlineMesh = new THREE.Mesh(boxGeo, outline);
+scene.add(outlineMesh);
 
 function animate() {
     requestAnimationFrame(animate);
 
     // Rotate the cube for some life
     mesh.rotation.x += 0.01;
+    outlineMesh.rotation.x += 0.01;
     mesh.rotation.y += 0.01;
+    outlineMesh.rotation.y += 0.01;
 
     renderer.render(scene, camera, sunlight);
 }
