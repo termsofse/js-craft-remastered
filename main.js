@@ -20,15 +20,19 @@ const lineMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00 });
 const outline = new THREE.LineSegments(edges, lineMaterial);
 scene.add(outline);
 
-let speed = document.getElementById("speed");
+const speedInput = document.getElementById('speedInput');
+let increment = 1;
+speedInput.addEventListener('input', () => {
+    increment = parseFloat(speedInput.value) || 0; 
+});
 let hue = 0;
 
 function animate() {
     requestAnimationFrame(animate);
 
-    hue += speed;
+    hue += increment;
 
-    if (hue > 360) hue = 1;
+    if (hue > 360) hue = 0;
     lineMaterial.color.setHSL(hue / 360, 1.0, 0.5);
     mat.color.setHSL(hue / 360, 1.0, 0.5);
 
