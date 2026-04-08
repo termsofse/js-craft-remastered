@@ -20,22 +20,16 @@ const lineMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00 });
 const outline = new THREE.LineSegments(edges, lineMaterial);
 scene.add(outline);
 
-let r = 0;
-let g = 85;
-let b = 170;
+let hue = 0;
 
 function animate() {
     requestAnimationFrame(animate);
 
-    r += 1;
-    g += 1;
-    b += 1;
+    hue += 1;
 
-    if (r > 255) r = 1;
-    if (g > 255) g = 1;
-    if (b > 255) b = 1;
-    lineMaterial.color.setStyle(`rgb(${r}, ${g}, ${b})`);
-    mat.color.setStyle(`rgb(${r}, ${g}, ${b})`)
+    if (hue > 360) hue = 1;
+    lineMaterial.color.setHSL(hue / 360, 1.0, 0.5);
+    mat.color.setHSL(hue / 360, 1.0, 0.5);
 
     mesh.rotation.x += 0.01;
     outline.rotation.x += 0.01;
